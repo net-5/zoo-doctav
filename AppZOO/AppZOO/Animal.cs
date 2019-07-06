@@ -4,8 +4,8 @@ using System.Text;
 
 namespace AppZOO
 {
-    public enum Food { Carrot, Apple, Milk, Bread, Chocolate };
-    public enum AnimalType { Horse, Elephant, Cow, Cat, Dog };
+    public enum Food { Carrot, Apple, Milk, Bread, Chocolate, Grass };
+    public enum AnimalType { Horse, Elephant, Cow, Cat, Dog, Giraffe };
     class Animal:IAnimalActions
     {
         private AnimalType animalType;
@@ -51,6 +51,15 @@ namespace AppZOO
         public void Eat()
         {
             Console.WriteLine($"{AnimalName} has just eaten {FavouriteFood}.");
+        }
+
+        /// <summary>
+        /// returns all the information about the current animal
+        /// </summary>
+        /// <returns></returns>
+        public string AnimalInfo()
+        {
+            return $"Name: {AnimalName}, birth date: {BirthDate.Date}, favourite food: {FavouriteFood}";
         }
     }
 }
