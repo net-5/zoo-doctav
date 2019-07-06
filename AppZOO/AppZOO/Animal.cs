@@ -6,7 +6,7 @@ namespace AppZOO
 {
     public enum Food { Carrot, Apple, Milk, Bread, Chocolate, Grass };
     public enum AnimalType { Horse, Elephant, Cow, Cat, Dog, Giraffe };
-    class Animal:IAnimalActions
+    class Animal : IAnimalActions
     {
         private AnimalType animalType;
         private string animalName;
@@ -21,7 +21,7 @@ namespace AppZOO
             get { return favouriteFood; }
             set { favouriteFood = value; }
         }
-            
+
         public DateTime BirthDate
         {
             get { return birthDate; }
@@ -59,7 +59,8 @@ namespace AppZOO
         /// <returns></returns>
         public string AnimalInfo()
         {
-            return $"Name: {AnimalName}, birth date: {BirthDate.Date}, favourite food: {FavouriteFood}";
+            return $"Name: {AnimalName}, birth date: {BirthDate.Date.ToString("dd/MM/yyyy")}, favourite food: {FavouriteFood}";
         }
+
     }
 }

@@ -24,6 +24,7 @@ namespace AppZOO
         public Zoo(string pName)
         {
             ZooName = pName;
+            this.ListOfAnimals = new List<Animal>();
         }
 
         /// <summary>
@@ -31,7 +32,7 @@ namespace AppZOO
         /// </summary>
         public void PrintAnimalList()
         {
-            Console.WriteLine($"At the zoo {this.ZooName} there are the following animals:");
+            Console.WriteLine($"At the zoo {this.ZooName} there are {this.ListOfAnimals.Count} animals as follows:");
             foreach (Animal animal in this.ListOfAnimals)
             {
                 Console.WriteLine(animal.AnimalInfo());
@@ -45,16 +46,17 @@ namespace AppZOO
             Console.WriteLine($"The animal named {pAnimal.AnimalName} was borned at zoo {this.ZooName}");
         }
 
-        public void BringToZoo(Zoo pSourceZoo, Animal pAnimal)
+        public void BringAnimal(Zoo pSourceZoo, Animal pAnimal)
         {
             ListOfAnimals.Add(pAnimal);
+            pSourceZoo.ListOfAnimals.Remove(pAnimal);
             Console.WriteLine($"The animal named {pAnimal.AnimalName} was bring from zoo {pSourceZoo.ZooName}");
         }
 
-        public void TransferFromZoo(Zoo pDestinationZoo, Animal pAnimal)
+        public void TransferAnimal(Zoo pDestinationZoo, Animal pAnimal)
         {
-            this.ListOfAnimals.Remove(pAnimal);
             pDestinationZoo.ListOfAnimals.Add(pAnimal);
+            this.ListOfAnimals.Remove(pAnimal);
             Console.WriteLine($"The animal {pAnimal.AnimalName} was transfered from {this.ZooName} to {pDestinationZoo.ZooName}");
         }
     }
