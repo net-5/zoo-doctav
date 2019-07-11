@@ -46,12 +46,6 @@ namespace AppZOO
             Console.WriteLine($"The animal named {pAnimal.AnimalName} was borned at zoo {this.ZooName}");
         }
 
-        public void BringAnimal(Zoo pSourceZoo, Animal pAnimal)
-        {
-            ListOfAnimals.Add(pAnimal);
-            pSourceZoo.ListOfAnimals.Remove(pAnimal);
-            Console.WriteLine($"The animal named {pAnimal.AnimalName} was bring from zoo {pSourceZoo.ZooName}");
-        }
 
         public void TransferAnimal(Zoo pDestinationZoo, Animal pAnimal)
         {

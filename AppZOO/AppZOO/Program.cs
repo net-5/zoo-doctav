@@ -32,10 +32,11 @@ namespace AppZOO
             zoo1.PrintAnimalList();
 
             //let's bring an animal to Birlad from Cracovia
-            zoo1.BringAnimal(zoo2, animal2);
+            zoo2.TransferAnimal(zoo1, animal2);
             //let's see the final lists of the animals
-            zoo1.PrintAnimalList();
             zoo2.PrintAnimalList();
+            zoo1.PrintAnimalList();
+            
         }
     }
 }
